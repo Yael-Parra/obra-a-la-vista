@@ -1,59 +1,61 @@
 # Obra a la vista
 
-**Obra a la vista te enseña en qué se gasta el dinero público en obra, quién se lo lleva y qué obras acaban costando más de lo que se adjudicó.**
+[Español](README.es.md) · **English**
 
-Cada año las administraciones españolas adjudican miles de obras: colegios, carreteras, hospitales, aceras. Los datos son públicos, pero están repartidos en plataformas distintas, en formatos pensados para máquinas y sin nadie que los junte. Obra a la vista los reúne en una sola web, los explica en lenguaje claro y señala dónde merece la pena mirar.
+**Obra a la vista shows where Spain's public money for construction goes, who gets it and which works ended up costing more than they were awarded for.**
 
-**[Abrir Obra a la vista →](https://obra-a-la-vista.obraalavista.workers.dev)**
+Every year Spanish public administrations award thousands of construction contracts: schools, roads, hospitals, pavements. The data is public, but it is scattered across different platforms, in formats designed for machines, and nobody puts it together. Obra a la vista ("public works in plain sight") gathers it in a single website, explains it in plain language and points out where it is worth taking a closer look.
 
-> Toda la información sale de fuentes oficiales y cada obra enlaza a su anuncio original. Los indicadores señalan dónde mirar; no son acusaciones.
+**[Open Obra a la vista →](https://obra-a-la-vista.obraalavista.workers.dev)**
 
----
-
-## Qué encuentras
-
-| Sección | Qué te enseña |
-| --- | --- |
-| **Desvíos** | Las obras que subieron de precio después de adjudicarse, cuánto subieron y en qué tipo de obra pasa más |
-| **Cruces** | Quién contrata con quién: busca una empresa o una administración y ves sus relaciones, cuántos contratos hay entre ellas y si alguno subió de precio |
-| **Mi zona** | La obra de tu municipio, contrate quien contrate; en la Comunidad de Madrid, también el pleno municipal y el presupuesto del ayuntamiento |
-| **Comparar** | Comunidades y municipios del mismo tamaño puestos al lado, solo con indicadores que significan lo mismo en todas partes y con su margen de error |
-| **Patrones** | Listas calculadas con reglas fijas e iguales para todos: empresas que se llevan casi todo lo de un órgano, obras con un único licitador, contratos menores justo por debajo del límite legal |
-| **Calidad del dato** | Qué falta o no cuadra en lo que publica cada administración, y qué órganos publican sus obras más completas |
-
-Cada obra tiene su ficha: presupuesto, adjudicación, empresa, número de ofertas, plazo de ejecución previsto, modificaciones y el enlace al anuncio oficial.
-
-## Cómo funciona
-
-1. **Reúne.** Descarga los anuncios de obra de la Plataforma de Contratación del Sector Público, que recoge también lo que publican las plataformas autonómicas.
-2. **Ordena.** Junta las versiones de cada expediente, separa las prórrogas de las modificaciones de precio y ubica cada obra en su municipio.
-3. **Cruza.** Añade el padrón del INE para comparar municipios de su tamaño y, en la Comunidad de Madrid, los plenos, las alcaldías y los presupuestos municipales.
-4. **Explica.** Convierte todo en cifras que se entienden de un vistazo: medianas en lugar de medias, márgenes de error y un aviso cada vez que un dato no permite concluir algo.
-
-## En cifras
-
-- **Toda España:** las 17 comunidades autónomas, más Ceuta y Melilla.
-- **171.000 expedientes de obra**, de enero de 2023 a noviembre de 2026.
-- **132.000 obras adjudicadas**, más de **13.000 órganos de contratación** y **39.000 empresas**.
-- **10.400 obras con modificaciones** publicadas después de adjudicarse.
-
-## Por qué te puedes fiar
-
-- **Comprobado contra la fuente.** De 180 obras elegidas al azar, 10 por comunidad, se cotejaron 175 con su página oficial: el presupuesto coincidía en todas.
-- **Lo que no se sabe, se dice.** La fuente no publica cuándo termina una obra ni su coste final, así que la web nunca los presenta como si los tuviera.
-- **Comparaciones justas.** No se compara una comunidad con otra cuando sus datos llegan por vías distintas, ni un municipio con otro de diferente tamaño.
-- **Sin datos personales.** No se muestran nombres de personas y las opiniones se guardan sin IP, sin nombre y sin correo.
-
-## Cómo está hecho
-
-| Capa | Tecnología |
-| --- | --- |
-| Ingesta y limpieza | Python: lectura de los ficheros ATOM y CODICE de la plataforma estatal, con GitHub Actions programadas |
-| Web | HTML, CSS y JavaScript sin frameworks, con gráficos SVG propios, carga por años y versión móvil |
-| Publicación | **Cloudflare Workers**: los ficheros se sirven desde la red de Cloudflare y un Worker en Python con FastAPI recibe las opiniones |
-| Base de datos | Postgres en Neon a través de Cloudflare Hyperdrive, con un usuario que solo puede insertar |
-| Protección contra bots | **Cloudflare Turnstile** en el formulario de opiniones, más un campo trampa y un límite de envíos por IP |
+> All the information comes from official sources and every work links to its original notice. The indicators point to where to look; they are not accusations. The website is in Spanish.
 
 ---
 
-<sub>Proyecto ciudadano e independiente de Yael Parra. Los datos pertenecen a las administraciones que los publican; Obra a la vista solo los reúne y los explica.</sub>
+## What you will find
+
+| Section | What it shows |
+| --- | --- |
+| **Desvíos** (cost overruns) | Works whose price went up after being awarded, by how much, and in which type of work it happens most |
+| **Cruces** (who contracts with whom) | Search for a company or an administration and see its relationships, how many contracts link them and whether any went up in price |
+| **Mi zona** (my area) | Construction in your municipality, whoever the contracting authority is; in the Community of Madrid, also the town council and its budget |
+| **Comparar** (compare) | Regions and similarly sized municipalities side by side, only with indicators that mean the same everywhere and with their margin of error |
+| **Patrones** (patterns) | Lists built with fixed rules applied equally to everyone: companies that take almost all of one authority's work, single bidder contracts, minor contracts just below the legal threshold |
+| **Calidad del dato** (data quality) | What is missing or inconsistent in what each administration publishes, and which authorities publish the most complete records |
+
+Every work has its own page: budget, award, company, number of bids, planned execution period, modifications and the link to the official notice.
+
+## How it works
+
+1. **Gathers.** Downloads construction notices from Spain's Public Sector Procurement Platform, which also collects what the regional platforms publish.
+2. **Organises.** Merges every version of each case file, separates time extensions from price modifications and places each work in its municipality.
+3. **Cross references.** Adds the national statistics office population register to compare municipalities of similar size and, in the Community of Madrid, town councils, mayors and municipal budgets.
+4. **Explains.** Turns everything into figures that can be read at a glance: medians instead of averages, margins of error and a warning whenever the data does not support a conclusion.
+
+## In figures
+
+- **All of Spain:** the 17 autonomous communities, plus Ceuta and Melilla.
+- **171,000 construction case files**, from January 2023 to November 2026.
+- **132,000 awarded works**, more than **13,000 contracting authorities** and **39,000 companies**.
+- **10,400 works with modifications** published after being awarded.
+
+## Why you can trust it
+
+- **Checked against the source.** Out of 180 randomly chosen works, 10 per region, 175 were compared by hand with their official page: the budget matched in all of them.
+- **What is not known is stated.** The source does not publish when a work is finished or its final cost, so the website never presents them as if it had them.
+- **Fair comparisons.** Regions are not compared when their data arrives through different channels, nor municipalities of different sizes.
+- **No personal data.** No names of people are shown, and feedback is stored without IP address, name or email.
+
+## How it is built
+
+| Layer | Technology |
+| --- | --- |
+| Ingestion and cleaning | Python: parsing of the national platform's ATOM and CODICE files, with scheduled GitHub Actions |
+| Website | HTML, CSS and JavaScript without frameworks, custom SVG charts, loading by year and a mobile version |
+| Hosting | **Cloudflare Workers**: files are served from Cloudflare's network and a Python Worker with FastAPI receives feedback |
+| Database | Postgres on Neon through Cloudflare Hyperdrive, with a user that can only insert |
+| Bot protection | **Cloudflare Turnstile** on the feedback form, plus a honeypot field and a per IP submission limit |
+
+---
+
+<sub>An independent civic project by Yael Parra. The data belongs to the administrations that publish it; Obra a la vista only gathers and explains it.</sub>
