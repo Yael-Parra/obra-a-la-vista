@@ -1,8 +1,8 @@
 <p align="right"><a href="README.md">English</a> · <b>Español</b></p>
 
-<h1 align="center">Obra a la vista</h1>
-
-<p align="center"><b>En qué se gasta el dinero público en obra en España, quién se lo lleva y qué obras acaban costando más de lo que se adjudicó.</b></p>
+<div align="center">
+  <img src="assets/banner-es.png" alt="Obra a la vista: obra pública en España, datos oficiales" width="100%"/>
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/España-17%20comunidades%20%2B%20Ceuta%20y%20Melilla-3E1D26?style=flat-square"/>
@@ -23,9 +23,13 @@ Cada año las administraciones españolas adjudican miles de obras: colegios, ca
 
 **Obra a la vista reúne esos datos en una sola web, los explica en lenguaje claro y señala dónde merece la pena mirar**, siempre con el enlace al anuncio oficial.
 
+![Portada de Obra a la vista](assets/web-inicio.png)
+
 > Toda la información sale de fuentes oficiales. Los indicadores señalan dónde mirar; no son acusaciones.
 
 ## Cómo funciona
+
+![Cómo funciona Obra a la vista: reúne, ordena, cruza y explica](assets/como-funciona-es.png)
 
 1. **Reúne.** Descarga los anuncios de obra de la Plataforma de Contratación del Sector Público, que recoge también lo que publican las plataformas autonómicas.
 2. **Ordena.** Junta las versiones de cada expediente, separa las prórrogas de las modificaciones de precio y ubica cada obra en su municipio.
@@ -54,7 +58,15 @@ Unos pocos principios dan forma a cada pantalla:
 | **Patrones** | Listas calculadas con reglas fijas e iguales para todos: empresas que se llevan casi todo lo de un órgano, obras con un único licitador, contratos menores justo por debajo del límite legal |
 | **Calidad del dato** | Qué falta o no cuadra en lo que publica cada administración, y qué órganos publican sus obras más completas |
 
+![Desvíos: cada punto es una obra que subió de precio, con la mediana de cada grupo](assets/web-desvios.png)
+
+![Quién contrata con quién: una administración y las empresas a las que contrata](assets/web-cruces.png)
+
 Cada obra tiene su ficha: presupuesto, adjudicación, empresa, número de ofertas, plazo de ejecución previsto, modificaciones y el enlace al anuncio oficial.
+
+![Ficha de una obra: presupuesto, adjudicación, modificación y plazo ampliado](assets/web-ficha.png)
+
+<p align="center"><img src="assets/web-movil.png" alt="Versión móvil" width="300"/></p>
 
 **En cifras:** 171.000 expedientes de obra de enero de 2023 a noviembre de 2026, 132.000 obras adjudicadas, más de 13.000 órganos de contratación, 39.000 empresas y 10.400 obras modificadas después de adjudicarse.
 

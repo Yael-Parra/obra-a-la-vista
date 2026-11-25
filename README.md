@@ -1,8 +1,8 @@
 <p align="right"><b>English</b> · <a href="README.es.md">Español</a></p>
 
-<h1 align="center">Obra a la vista</h1>
-
-<p align="center"><b>Where Spain's public money for construction goes, who gets it, and which works ended up costing more than they were awarded for.</b></p>
+<div align="center">
+  <img src="assets/banner-en.png" alt="Obra a la vista: public works in Spain, official data" width="100%"/>
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Spain-17%20regions%20%2B%20Ceuta%20%26%20Melilla-3E1D26?style=flat-square"/>
@@ -23,9 +23,13 @@ Every year Spanish public administrations award thousands of construction contra
 
 **Obra a la vista** ("public works in plain sight") **gathers that data in a single website, explains it in plain language and points out where it is worth taking a closer look**, always linking back to the official notice.
 
+![Obra a la vista home page](assets/web-inicio.png)
+
 > The website is in Spanish. All the information comes from official sources. The indicators point to where to look; they are not accusations.
 
 ## How it works
+
+![How Obra a la vista works: gather, organise, cross reference, explain](assets/how-it-works-en.png)
 
 1. **Gather.** Construction notices are downloaded from Spain's Public Sector Procurement Platform, which also collects what the regional platforms publish.
 2. **Organise.** Every version of each case file is merged, time extensions are separated from price modifications and each work is placed in its municipality.
@@ -54,7 +58,15 @@ A few principles shape every screen:
 | **Patrones** (patterns) | Lists built with fixed rules applied equally to everyone: companies that take almost all of one authority's work, single bidder contracts, minor contracts just below the legal threshold |
 | **Calidad del dato** (data quality) | What is missing or inconsistent in what each administration publishes, and which authorities publish the most complete records |
 
+![Cost overruns: every dot is a work whose price went up, with the median of each group](assets/web-desvios.png)
+
+![Who contracts with whom: one administration and the companies it hires](assets/web-cruces.png)
+
 Every work has its own page: budget, award, company, number of bids, planned execution period, modifications and the link to the official notice.
+
+![The page of one work: budget, award, modification and the extended execution period](assets/web-ficha.png)
+
+<p align="center"><img src="assets/web-movil.png" alt="Mobile version" width="300"/></p>
 
 **In figures:** 171,000 construction case files from January 2023 to November 2026, 132,000 awarded works, more than 13,000 contracting authorities, 39,000 companies and 10,400 works modified after being awarded.
 
