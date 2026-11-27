@@ -31,20 +31,20 @@ Cada año las administraciones españolas adjudican miles de obras: colegios, ca
 
 ![Cómo funciona Obra a la vista: reúne, ordena, cruza y explica](assets/como-funciona-es.png)
 
-1. **Reúne.** Descarga los anuncios de obra de la Plataforma de Contratación del Sector Público, que recoge también lo que publican las plataformas autonómicas.
-2. **Ordena.** Junta las versiones de cada expediente, separa las prórrogas de las modificaciones de precio y ubica cada obra en su municipio.
-3. **Cruza.** Añade el padrón del INE para comparar municipios de su tamaño y, en la Comunidad de Madrid, los plenos, las alcaldías y los presupuestos municipales.
-4. **Explica.** Convierte todo en cifras que se entienden de un vistazo, con un aviso cada vez que un dato no permite concluir algo.
+1. **Reúne.** Los datos oficiales de contratación de obra pública de toda España.
+2. **Ordena.** Cada obra, con su historia completa y su municipio.
+3. **Cruza.** Con otras estadísticas oficiales, para comparar solo lo comparable.
+4. **Explica.** Cifras que se entienden de un vistazo, con un aviso cada vez que un dato no permite concluir algo.
 
 ## Las ideas detrás
 
 Unos pocos principios dan forma a cada pantalla:
 
 - **Primero lo importante.** La portada abre con las obras que subieron de precio y con quién contrata con quién. Todo lo demás está un nivel más abajo, para quien quiera profundizar.
-- **Medianas, no medias.** Un desvío enorme no debe deformar la imagen, así que la cifra de referencia es siempre la mediana, y las comparaciones llevan su margen de error.
-- **Solo comparaciones justas.** No se ordenan comunidades cuando sus datos llegan a la plataforma estatal por vías distintas, y un municipio solo se compara con otros de su tamaño.
+- **Cifras robustas.** Un desvío enorme no debe deformar la imagen, y las comparaciones llevan su margen de error.
+- **Solo comparaciones justas.** Las comunidades cuyos datos llegan incompletos no se ordenan junto al resto, y un municipio solo se compara con otros de su tamaño.
 - **Decir lo que no se sabe.** La fuente no publica cuándo termina una obra ni cuánto costó al final, así que la web nunca los presenta como si los tuviera.
-- **Comprobado contra la fuente.** De 180 obras elegidas al azar, 10 por comunidad, se cotejaron 175 a mano con su página oficial, y el presupuesto coincidía en todas.
+- **Comprobado contra la fuente.** Una muestra aleatoria de obras se cotejó con su anuncio oficial, y las cifras coincidían.
 - **Sin datos personales.** No se muestran nombres de personas, y las opiniones se guardan sin IP, sin nombre y sin correo.
 
 ## Qué hay dentro
@@ -55,8 +55,8 @@ Unos pocos principios dan forma a cada pantalla:
 | **Cruces** | Busca una empresa o una administración y ves sus relaciones, cuántos contratos hay entre ellas y si alguno subió de precio |
 | **Mi zona** | La obra de tu municipio, contrate quien contrate |
 | **Comparar** | Comunidades y municipios del mismo tamaño puestos al lado, solo con indicadores que significan lo mismo en todas partes |
-| **Patrones** | Listas calculadas con reglas fijas e iguales para todos: empresas que se llevan casi todo lo de un órgano, obras con un único licitador, contratos menores justo por debajo del límite legal |
-| **Calidad del dato** | Qué falta o no cuadra en lo que publica cada administración, y qué órganos publican sus obras más completas |
+| **Patrones** | Listas calculadas con las mismas reglas para todos: empresas que se llevan casi todo lo de un órgano, obras con un único licitador, contratos menores justo por debajo del límite legal |
+| **Sobre los datos** | De dónde sale cada cifra, qué obliga la ley a publicar, qué no se puede saber y qué falta en lo que publica cada administración |
 
 ![Desvíos: cada punto es una obra que subió de precio, con la mediana de cada grupo](assets/web-desvios.png)
 
@@ -74,15 +74,15 @@ Cada obra tiene su ficha: presupuesto, adjudicación, empresa, número de oferta
 
 | Capa | Tecnología |
 | --- | --- |
-| Ingesta y limpieza | Python: lectura de los ficheros ATOM y CODICE de la plataforma estatal, con GitHub Actions programadas |
+| Procesamiento de datos | Python |
 | Web | HTML, CSS y JavaScript sin frameworks, con gráficos SVG propios, carga por años y versión móvil |
 | Publicación | **Cloudflare Workers**: los ficheros se sirven desde la red de Cloudflare y un Worker en Python con FastAPI recibe las opiniones |
-| Base de datos | Postgres en Neon a través de Cloudflare Hyperdrive, con un usuario que solo puede insertar |
-| Protección contra bots | **Cloudflare Turnstile** en el formulario de opiniones, más un campo trampa y un límite de envíos por IP |
+| Base de datos | Postgres en Neon a través de Cloudflare Hyperdrive |
+| Protección contra bots | **Cloudflare Turnstile** en el formulario de opiniones |
 
 ## Estado
 
-En marcha y con toda España. Los datos se actualizan desde las fuentes oficiales, y la página de metodología de la web explica cada regla y cada limitación conocida.
+En marcha y con toda España. Los datos se actualizan desde las fuentes oficiales, y la página «Sobre los datos» de la web explica de dónde sale cada cifra y cada limitación conocida.
 
 ---
 

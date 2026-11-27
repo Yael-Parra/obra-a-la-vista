@@ -31,20 +31,20 @@ Every year Spanish public administrations award thousands of construction contra
 
 ![How Obra a la vista works: gather, organise, cross reference, explain](assets/how-it-works-en.png)
 
-1. **Gather.** Construction notices are downloaded from Spain's Public Sector Procurement Platform, which also collects what the regional platforms publish.
-2. **Organise.** Every version of each case file is merged, time extensions are separated from price modifications and each work is placed in its municipality.
-3. **Cross reference.** The national population register is added to compare municipalities of similar size and, in the Community of Madrid, town councils, mayors and municipal budgets.
-4. **Explain.** Everything becomes figures that can be read at a glance, with a warning whenever the data does not support a conclusion.
+1. **Gather.** Official public works procurement data from all of Spain.
+2. **Organise.** Each work, with its full history and its municipality.
+3. **Cross reference.** With other official statistics, so that like is compared with like.
+4. **Explain.** Figures that can be read at a glance, with a warning whenever the data does not support a conclusion.
 
 ## The thinking behind it
 
 A few principles shape every screen:
 
 - **Lead with what matters.** The home page opens with the works that went up in price and who contracts with whom. Everything else is one level deeper, for those who want it.
-- **Medians, not averages.** A single huge overrun should not distort the picture, so the typical figure is always the median, and comparisons carry their margin of error.
-- **Fair comparisons only.** Regions are not ranked against each other when their data reaches the national platform through different channels, and municipalities are only compared with others of the same size.
+- **Robust figures.** A single huge overrun should not distort the picture, and comparisons carry their margin of error.
+- **Fair comparisons only.** Regions whose data arrives incomplete are not ranked against the rest, and municipalities are only compared with others of a similar size.
 - **Say what is not known.** The source does not publish when a work is finished or what it finally cost, so the website never presents those as if it had them.
-- **Checked against the source.** Out of 180 randomly chosen works, 10 per region, 175 were compared by hand with their official page, and the budget matched in all of them.
+- **Checked against the source.** A random sample of works was compared with their official notices, and the figures matched.
 - **No personal data.** No names of people are shown, and feedback is stored without IP address, name or email.
 
 ## What's inside
@@ -55,8 +55,8 @@ A few principles shape every screen:
 | **Cruces** (who contracts with whom) | Search for a company or an administration and see its relationships, how many contracts link them and whether any went up in price |
 | **Mi zona** (my area) | Construction in your municipality, whoever the contracting authority is |
 | **Comparar** (compare) | Regions and similarly sized municipalities side by side, only with indicators that mean the same everywhere |
-| **Patrones** (patterns) | Lists built with fixed rules applied equally to everyone: companies that take almost all of one authority's work, single bidder contracts, minor contracts just below the legal threshold |
-| **Calidad del dato** (data quality) | What is missing or inconsistent in what each administration publishes, and which authorities publish the most complete records |
+| **Patrones** (patterns) | Lists built with the same rules for everyone: companies that take almost all of one authority's work, single bidder contracts, minor contracts just below the legal threshold |
+| **Sobre los datos** (about the data) | Where every figure comes from, what the law requires to be published, what cannot be known and what is missing in what each administration publishes |
 
 ![Cost overruns: every dot is a work whose price went up, with the median of each group](assets/web-desvios.png)
 
@@ -74,15 +74,15 @@ Every work has its own page: budget, award, company, number of bids, planned exe
 
 | Layer | Technology |
 | --- | --- |
-| Ingestion and cleaning | Python: parsing of the national platform's ATOM and CODICE files, with scheduled GitHub Actions |
+| Data pipeline | Python |
 | Website | HTML, CSS and JavaScript without frameworks, custom SVG charts, loading by year and a mobile version |
 | Hosting | **Cloudflare Workers**: files are served from Cloudflare's network and a Python Worker with FastAPI receives feedback |
-| Database | Postgres on Neon through Cloudflare Hyperdrive, with a user that can only insert |
-| Bot protection | **Cloudflare Turnstile** on the feedback form, plus a honeypot field and a per IP submission limit |
+| Database | Postgres on Neon through Cloudflare Hyperdrive |
+| Bot protection | **Cloudflare Turnstile** on the feedback form |
 
 ## Status
 
-Live and covering all of Spain. Data is refreshed from the official sources, and the methodology page on the website explains every rule and every known limitation.
+Live and covering all of Spain. Data is refreshed from the official sources, and the "Sobre los datos" page on the website explains where every figure comes from and every known limitation.
 
 ---
 
